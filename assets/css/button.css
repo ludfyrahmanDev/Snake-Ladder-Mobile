@@ -1,0 +1,37 @@
+.btn-primary{
+    background: url('../img/button/main.png');
+    background-size: 100% 100%!important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    padding-left: 8rem!important;
+    padding-right: 8rem!important;
+    padding-top: 2rem!important;
+    padding-bottom: 2rem!important;
+}
+
+.btn-primary-sm{
+    background: url('../img/button/main.png');
+    background-size: 100% 100%!important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    padding-left: 4rem!important;
+    padding-right: 4rem!important;
+    padding-top: 1rem!important;
+    padding-bottom: 1rem!important;
+}
+.btn-disabled{
+    background: url('../img/button/main-disabled.png');
+    background-size: 100% 100%!important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    padding-left: 4rem!important;
+    padding-right: 4rem!important;
+    padding-top: 1rem!important;
+    padding-bottom: 1rem!important;
+}
+.btn-primary:hover{
+    background: url('../img/button/main-hover.png');
+}
+.btn-primary:active{
+    background: url('../img/button/main-click.png');
+}

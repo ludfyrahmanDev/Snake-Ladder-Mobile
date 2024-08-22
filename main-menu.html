@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Menu</title>
+    <!-- import style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/window.css">
+    <link rel="stylesheet" href="assets/css/button.css">
+    <!-- call tailwind -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body>
+    <div class="main">
+        <div class="main-window">
+            <img src="assets/img/window/main.svg" alt="">
+            <div class="menu absolute flex flex-col gap-4">
+                <h2 class="text-4xl text-center">Sigesit</h2>
+                <button class="btn btn-primary text-2xl" onclick="openLink('log-in.html')">Log In</button>
+                <button class="btn btn-primary text-2xl" onclick="openLink('register.html')">Registrasi</button>
+                <button class="btn btn-primary text-2xl" onclick="openLink('forgot-password.html')">Lupa Password</button>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

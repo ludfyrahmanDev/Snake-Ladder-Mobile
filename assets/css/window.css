@@ -1,0 +1,9 @@
+/* make main window with main.svg */
+.main-window {
+  height: 50vh;
+  width: 50vw;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}

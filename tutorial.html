@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Menu</title>
+    <!-- import style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/window.css">
+    <link rel="stylesheet" href="assets/css/button.css">
+    <!-- call tailwind -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body>
+    <div class="main">
+        <div class="main-window">
+            <img src="assets/img/window/main.svg" alt="">
+            <div class="menu absolute flex flex-col gap-4">
+                <h2 class="text-4xl text-center">Sigesit</h2>
+                <div style="padding: 100px;">
+                    <ol class="list-decimal	">
+                        <li>Buat akun terlebih dahulu bagi yang pertama kali bermain game ini, dengan klik registrasi dan isikan dengan lengkap data player dan bagi yang sudah mempunyai akun game bisa langsung klik login</li>
+                        <li>klik star untuk memulai game (untuk bermain 2 orang klik P1 VS P2)</li>
+                        <li>klik telur pada layar untuk mengocok telur, anda akan dibawa pada Langkah kedepan sesuai dengan hasil telur yang didapatkan</li>
+                        <li>ketika mendapatkan kotak tangga maka player akan dibawa melaju lebih cepat apabila menjawab rintangan pertanyaan dengan benar</li>
+                        <li>ketika mendapatkan kotak virus maka player diharuskan untuk menjawab pertanyaan, jawaban salah player akan terjatuh pada kotak dibawahnya, jawaban benar maka akan menjadi imun player tetap pada kotak tersebut </li>
+                        <li>player yang pertama kali mencapai angka 100 akan mendapatkan mahkota gizi sehat (pemenang)</li>
+                        <li>Mari mainkan game ini dengan menjadi pemain pertama yang mencapai mahkota gizi sehat dan kumpulkan mahkota gizi sehat sebanyak-banyaknya</li>
+                        <li>Tingkatkan level anda hingga menjadi pro player</li>
+                    </ol>
+                    <button class="btn btn-primary-sm text-2xl" onclick="openLink('menu.html')">Kembali</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
