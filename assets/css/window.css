@@ -1,9 +1,21 @@
 /* make main window with main.svg */
 .main-window {
-  height: 50vh;
-  width: 50vw;
+  width: 80vw;
+  height: 80vh;
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
+  padding-bottom: 1%;
+  padding-top: 1%;
+  background:url(../img/window/main.png) no-repeat center center;
+  background-size: 100% 100%;
+}
+
+.menu{
+  width: 80%;
+  height: 85%;
+}
+.gap-4-custom{
+  gap: 1%;
 }

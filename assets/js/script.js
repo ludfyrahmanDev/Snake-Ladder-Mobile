@@ -1,6 +1,7 @@
 window.onload = function() {
     // check if file is index.html
-    if (window.location.pathname == '/index.html' || window.location.pathname == '/' || window.location.pathname == '') {
+    var path = window.location.pathname;
+    if (path == '/index.html' || path == '/' || path == '' || path == '/project/POLIJE/sigesit/') {
       const splashScreen = document.querySelector('.splash-screen');
   
       // Simulate loading time

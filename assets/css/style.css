@@ -57,3 +57,12 @@ body{
     background-color: #000;
     color: #fff;
 }
+
+.img-fluid{
+    width: 50%;
+    height: auto;
+    margin: auto;
+}
+.list-decimal{
+    font-size: 8px;;
+}
