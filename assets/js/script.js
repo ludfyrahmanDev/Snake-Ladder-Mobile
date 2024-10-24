@@ -19,6 +19,11 @@ window.onload = function() {
   function openLink(link) {
     window.location.href = link;
   }
+  function openLinkTimout(link) {
+    setTimeout(() => {
+      window.location.href = link;
+    }, 3000);
+  }
   // open back
   function openBack() {
     window.history.back();

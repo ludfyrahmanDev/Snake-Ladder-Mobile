@@ -1,5 +1,12 @@
 <?php
-$connect = mysqli_connect("localhost", "root", "", "project_php_game_sigesit");
+// read database name from env
+$env = parse_ini_file('.env');
+session_start();
+$database = $env['DB_DATABASE'];
+$host = $env['DB_HOST'];
+$user = $env['DB_USERNAME'];
+$pass = $env['DB_PASSWORD'];
+$connect = mysqli_connect($host, $user, $pass, $database);
 if(!$connect){
     die("Koneksi ke database gagal: " . mysqli_connect_error());
 }
