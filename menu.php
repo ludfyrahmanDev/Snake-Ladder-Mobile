@@ -30,6 +30,7 @@
                 <button class="btn btn-primary-sm text-xl" onclick="openLink('history.html')">History</button>
                 <button class="btn btn-primary-sm text-xl" onclick="openLink('tutorial.html')">Petunjuk Game</button>
                 <button class="btn btn-primary-sm text-xl" onclick="openLink('about.html')">Tentang</button>
+                <button class="btn btn-primary-sm text-xl" onclick="openLink('api/logout.php')">Keluar</button>
             </div>
         </div>
     </div>

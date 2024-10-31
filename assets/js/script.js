@@ -8,7 +8,7 @@ window.onload = function() {
       setTimeout(() => {
         // splashScreen.style.display = 'none';
         // redirect to the game
-        window.location.href = 'main-menu.html';
+        window.location.href = 'main-menu.php';
         // Load main content or redirect to the game
       }, 3000); // Replace 3000 with desired loading time in milliseconds
     }

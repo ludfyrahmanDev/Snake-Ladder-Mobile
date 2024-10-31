@@ -11,7 +11,7 @@
 
 .btn-primary-sm{
     background: url('../img/button/main.png');
-    background-size: 100% 100%!important;
+    background-size: 50% 100%!important;
     background-repeat: no-repeat !important;
     background-position: center !important;
     padding-left: 1%!important;
@@ -21,7 +21,7 @@
 }
 .btn-disabled{
     background: url('../img/button/main-disabled.png');
-    background-size: 100% 100%!important;
+    background-size: 50% 100%!important;
     background-repeat: no-repeat !important;
     background-position: center !important;
     padding-left: 4rem!important;

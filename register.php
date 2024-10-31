@@ -31,6 +31,7 @@
                         <input type="password" id="password" class="input p-2 w-full" required placeholder="Password">
                     </div>
                     <button class="btn btn-primary text-2xl mt-3" type='submit'>Register</button>
+                    <button class="btn btn-primary text-xl" type='button' onclick="openLink('main-menu.php')">Kembali</button>
                 </form>
             </div>
         </div>

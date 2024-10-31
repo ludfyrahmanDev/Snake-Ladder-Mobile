@@ -23,10 +23,8 @@
                         <label for="password" class="text-2xl">Password</label>
                         <input type="password" id="password" class="input p-2" required placeholder="Password" required>
                     </div>
-                    <div class='flex items-center justify-center w-full mt-2'>
-                        <button class="btn btn-primary text-xl" type='submit'>Log In</button>
-                        <button class="btn btn-primary text-xl" type='button' onclick="openLink('main-menu.html')">Kembali</button>
-                    </div>
+                        <button class="btn btn-primary mt-2 text-xl w-full" type='submit'>Log In</button>
+                        <button class="btn btn-primary text-xl w-full" type='button' onclick="openLink('main-menu.php')">Kembali</button>
                 </form>
                
             </div>
