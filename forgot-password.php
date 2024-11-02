@@ -20,7 +20,7 @@
                     </div>
                 </form>
                 <p>Kode Verifikasi akan dikirim ke nomor yang di inputkan. silahkan input no hp dengan benar</p>
-                <button class="btn btn-primary text-2xl" onclick="openLink('menu.html')">Kirim Kode Verifikasi</button>
+                <button class="btn btn-primary text-2xl" onclick="openLink('menu.php')">Kirim Kode Verifikasi</button>
                 <button class="btn btn-primary text-2xl" onclick="openLink('main-menu.php')">Kembali</button>
                 
             </div>

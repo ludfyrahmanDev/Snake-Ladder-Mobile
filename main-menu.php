@@ -12,7 +12,7 @@
     <div class="main">
         <div class="main-window">
             <div class="menu absolute flex flex-col gap-4-custom justify-center">
-                <h2 class="text-xl text-center">Sigesit</h2>
+                <h2 class="text-xl text-center"><?= $app['app_name'] ?></h2>
                 <button class="btn btn-primary-sm text-xl" onclick="openLink('login.php')">Log In</button>
                 <button class="btn btn-primary-sm text-xl" onclick="openLink('register.php')">Registrasi</button>
                 <button class="btn btn-primary-sm text-xl" onclick="openLink('forgot-password.php')">Lupa Password</button>

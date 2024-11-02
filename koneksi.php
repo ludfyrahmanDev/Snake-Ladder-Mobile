@@ -1,7 +1,8 @@
 <?php
+session_start();
 // read database name from env
 $env = parse_ini_file('.env');
-session_start();
+
 $database = $env['DB_DATABASE'];
 $host = $env['DB_HOST'];
 $user = $env['DB_USERNAME'];

@@ -1,9 +1,8 @@
 window.onload = function() {
-    // check if file is index.html
+    // check if file is index.php
     var path = window.location.pathname;
-    if (path == '/index.html' || path == '/' || path == '' || path == '/project/POLIJE/sigesit/') {
+    if (path == '/index.php' || path == '/' || path == '' || path == '/project/POLIJE/sigesit/') {
       const splashScreen = document.querySelector('.splash-screen');
-  
       // Simulate loading time
       setTimeout(() => {
         // splashScreen.style.display = 'none';
@@ -22,7 +21,7 @@ window.onload = function() {
   function openLinkTimout(link) {
     setTimeout(() => {
       window.location.href = link;
-    }, 3000);
+    }, 1000);
   }
   // open back
   function openBack() {
@@ -38,7 +37,7 @@ window.onload = function() {
       } else {
         // redirect to the game
         alert(`You have entered ${countPlayer} players`);
-        openLink('game.html');
+        openLink('game.php');
       }
     }
   }

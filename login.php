@@ -6,14 +6,13 @@
     <title>Main Menu</title>
     <?php
         include "include/cssHeader.php";
-        print_r($_SESSION);
     ?>
 </head>
 <body>
     <div class="main">
         <div class="main-window">
             <div class="menu absolute flex flex-col gap-4-custom justify-center items-center">
-                <h2 class="text-4xl text-center">Sigesit</h2>
+                <h2 class="text-4xl text-center"><?= $app['app_name'] ?></h2>
                 <form  id='loginForm'>
                     <div>
                         <label for="username" class="text-2xl">Username</label>

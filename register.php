@@ -12,7 +12,7 @@
     <div class="main">
         <div class="main-window">
             <div class="menu absolute flex flex-col gap-4">
-                <h2 class="text-3xl text-center">Sigesit</h2>
+                <h2 class="text-3xl text-center"><?= $app['app_name'] ?></h2>
                 <form id="myForm">
                     <div>
                         <label for="username" class="text-2xl">Username</label>
