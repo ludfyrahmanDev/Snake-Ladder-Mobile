@@ -1,7 +1,8 @@
 window.onload = function() {
     // check if file is index.php
     var path = window.location.pathname;
-    if (path == '/index.php' || path == '/' || path == '' || path == '/project/POLIJE/sigesit/') {
+    var file = path.split("/").pop();
+    if (file == '/index.php' || file == 'main.php' || path == '/' || path == '' || path == '/project/POLIJE/sigesit/') {
       const splashScreen = document.querySelector('.splash-screen');
       // Simulate loading time
       setTimeout(() => {
