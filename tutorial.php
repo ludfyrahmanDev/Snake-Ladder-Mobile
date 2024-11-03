@@ -14,9 +14,9 @@
             <div class="menu absolute flex flex-col gap-4-custom justify-center items-center">
                 <div class='flex items-center justify-center flex-col'>
                     <h2 class="text-xl text-center">Sigesit</h2>
-                    <p class='text-xs lg:text-lg'>
-                    <?= $app['tutorial'] ?>  
-                    </p>
+                    <div class='text-[8px] lg:text-lg'>
+                    <?= $app['tutorial'] ?> 
+                    </div>
                     <button class="btn btn-primary text-2xl" onclick="openLink('menu.php')">Kembali</button>
                 </div>
                 
