@@ -15,7 +15,7 @@ $filename = basename($_SERVER['PHP_SELF']);
 $username = @$_SESSION['username'];
 $app = mysqli_query($connect, "SELECT * FROM sites limit 1");
 $app = mysqli_fetch_assoc($app);
-if($filename == 'menu.php'){
+if(in_array($filename, ['menu.php', 'game.php', 'level.php'])){
     // check session
     if(!isset($username)){
         header('Location: login.php');

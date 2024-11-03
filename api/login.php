@@ -16,6 +16,14 @@ if(mysqli_num_rows($query) > 0){
     $data = mysqli_fetch_assoc($query);
     $_SESSION['username'] = $data['username'];
     $_SESSION['id'] = $data['id'];
+    $now = date('Y-m-d');
+    $date = date('Y-m-d', strtotime($data['login_at']));
+    $health = $data['health'];
+    if($now != $date){
+        $health = 3;
+    }
+    // update login 
+    $update = mysqli_query($connect, "UPDATE users SET login_at = now(), health='$health' WHERE id = '$data[id]'");
     $msg = [
         'status' => 'success',
         'message' => 'Login Berhasil',

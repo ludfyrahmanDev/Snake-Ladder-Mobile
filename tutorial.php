@@ -12,14 +12,12 @@
     <div class="main">
         <div class="main-window">
             <div class="menu absolute flex flex-col gap-4-custom justify-center items-center">
-                <div class=''>
+                <div class='flex items-center justify-center flex-col'>
                     <h2 class="text-xl text-center">Sigesit</h2>
-                    <div>
-                        <p class='text-xs lg:text-lg'>
-                        <?= $app['tutorial'] ?>  
-                        </p>
-                        <button class="btn btn-primary text-2xl" onclick="openLink('menu.php')">Kembali</button>
-                    </div>
+                    <p class='text-xs lg:text-lg'>
+                    <?= $app['tutorial'] ?>  
+                    </p>
+                    <button class="btn btn-primary text-2xl" onclick="openLink('menu.php')">Kembali</button>
                 </div>
                 
             </div>

@@ -15,7 +15,7 @@
                 <h2 class="text-xl text-center"><?= $app['app_name'] ?></h2>
                 <button class="btn btn-primary-sm text-xl" onclick="openLink('login.php')">Log In</button>
                 <button class="btn btn-primary-sm text-xl" onclick="openLink('register.php')">Registrasi</button>
-                <button class="btn btn-primary-sm text-xl" onclick="openLink('forgot-password.php')">Lupa Password</button>
+                <button class="btn btn-primary-sm text-xl hidden" onclick="openLink('forgot-password.php')">Lupa Password</button>
             </div>
         </div>
     </div>

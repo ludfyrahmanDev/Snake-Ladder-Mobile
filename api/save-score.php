@@ -1,8 +1,9 @@
 <?php 
 include "../koneksi.php";
 $score = $_POST['score'];
+$type = $_POST['type'];
 $user_id = $_SESSION['id'];
-$query = "INSERT INTO game_score (score, user_id) VALUES ('$score', '$user_id')";
+$query = "INSERT INTO game_score (score, user_id, `type`) VALUES ('$score', '$user_id', '$type')";
 $exec = mysqli_query($connect, $query);
 
 // check query with user_id

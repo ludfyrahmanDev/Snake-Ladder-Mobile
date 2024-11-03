@@ -16,7 +16,14 @@ window.onload = function() {
   // main menu script
   // onclick button open attr link
   function openLink(link) {
-    window.location.href = link;
+    playAudio();
+    setTimeout(() => {
+      window.location.href = link;
+    }, 500);
+  }
+  function playAudio() {
+    var audio = new Audio("assets/audio/move.mp3");
+    audio.play();
   }
   function openLinkTimout(link) {
     setTimeout(() => {
@@ -25,7 +32,11 @@ window.onload = function() {
   }
   // open back
   function openBack() {
-    window.history.back();
+    
+    playAudio();
+    setTimeout(() => {
+      window.history.back();
+    }, 500);
   }
   // make function multiplayer and alert input count player
   function multiplayer() {

@@ -115,12 +115,6 @@ const questions = {
         
     ],
     "regular":[
-//         1.Mengapa kita harus makan?
-// a.Untuk menghasilkan energi
-// b.Menjaga kesehatan kulit
-// c.Agar tidak mengantuk
-// d.Agar tidur menjadi nyenyak
-// Jawaban: a
         {
             "question": "Mengapa kita harus makan?",
             "answers": [
@@ -131,36 +125,6 @@ const questions = {
             ],
             "correct": "a"
         },
-//         3.Tahu dan tempe termasuk kedalam kelompok zat gizi…
-// a.Karbohidrat
-// b.Protein nabati
-// c.Protein hewani
-// d.Lemak
-// Jawaban: b
-// 4.Contoh makanan yang memiliki penyerapan zat besi tinggi adalah…
-// a.Telur, ayam, ikan, dan daging
-// b.Tahu dan tempe
-// c.Bayam dan kangkung
-// d.Buah naga dan tomat
-// Jawaban: a
-// 5.Jika kita makan terlalu banyak dari kebutuhan kita, maka…
-// a.Gemuk/ status gizi berlebih
-// b.Sulit berpikir dan belajar
-// c.Malas bergerak dan beraktivitas
-// d.Mudah marah dan emosi
-// Jawaban: a
-// 6.Vitamin apa yang paling banyak pada buah jeruk dan jambu biji?
-// a.Vitamin A
-// b.Vitamin C
-// c.Vitamin D
-// d.Vitamin E
-// Jawaban: b
-// 7.Kita harus minum air putih sebanyak…
-// a.10 gelas per hari
-// b.3 gelas per hari
-// c.8 gelas per hari
-// d.2 gelas per hari
-// Jawaban: c
         {
             "question": "Tahu dan tempe termasuk kedalam kelompok zat gizi…",
             "answers": [
@@ -283,24 +247,6 @@ const questions = {
         },
     ],
     "professional":[
-//         1.Apa itu gizi seimbang? 
-// a. Makan banyak permen
-// b. Makan makanan yang mengandung semua nutrisi yang dibutuhkan tubuh
-// c. Hanya makan buah
-// d. Minum soda setiap hari
-// Jawaban: b
-// 2.Apa manfaat dari mengonsumsi sayur dan buah setiap hari? 
-// a. Membuat kita merasa lelah
-// b. Menyebabkan sakit perut
-// c. Memberikan vitamin dan serat
-// d. Membuat kita mengantuk
-// Jawaban: c
-// 3.Apa fungsi utama dari protein dalam tubuh kita? 
-// a. Memberikan energi
-// b. Membangun dan memperbaiki jaringan tubuh
-// c. Menyebabkan kantuk
-// d. Menambah rasa makanan
-// Jawaban: b
         {
             "question": "Apa itu gizi seimbang?",
             "answers": [

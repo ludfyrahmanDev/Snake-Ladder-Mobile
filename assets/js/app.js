@@ -132,8 +132,11 @@ class GameBoard {
         alert("Winner is " + this.podium[0]);
         alert("PODIUM: " + this.podium);
         // ajax to save score
+        var urlParams = new URLSearchParams(window.location.search);
+        var type = urlParams.get('type');
         var form = new FormData();
         form.append("score", this.score);
+        form.append("type", type)
         $.ajax({
             url: 'api/save-score.php',
             type: 'POST',
@@ -264,9 +267,9 @@ class GameBoard {
                     this.playAudio("assets/audio/move.mp3");
                     await new Promise(resolve => setTimeout(resolve, 150));
                 }else{
-                    this.playerPositions[player.getName()] = 90;
+                    this.playerPositions[player.getName()] = 38;
                     this.playAudio("assets/audio/move.mp3");
-                    player.setPosition(90);
+                    player.setPosition(38);
                     player.updatePosition();
                     await new Promise(resolve => setTimeout(resolve, 150));
                 }
@@ -287,7 +290,10 @@ class GameBoard {
         if (this.playerPositions[player.getName()] < 100) {
             let initialPos = this.playerPositions[player.getName()];
             if (this.playerPositions[player.getName()] in this.board.getSnakeAndLadders()) {
-                var question = this.board.getRandQuestions();
+                // get parameter type in url
+                var urlParams = new URLSearchParams(window.location.search);
+                var type = urlParams.get('type');
+                var question = this.board.getRandQuestions(type);
                 var finalPos = this.board.getSnakeAndLadders()[this.playerPositions[player.getName()]];
                 if(player.getName() != "computer"){
                     var answer = prompt(question.question + "\n" + question.answers.join("\n"));
@@ -303,15 +309,35 @@ class GameBoard {
                         }
     
                     }else{
-                        if(finalPos < this.playerPositions[player.getName()]){
-                            // if player is going down a snake
-                            console.log('jawaban anda salah, anda akan turun ke posisi '+finalPos);
-                            this.playerPositions[player.getName()] = finalPos;
-                            player.setPosition(this.playerPositions[player.getName()]);
+                        // apakah anda ingin menggunakan nyawa
+                        var nyawa = confirm("Jawaban anda salah, apakah anda ingin menggunakan nyawa?");
+                        if(nyawa){
+                            $.ajax({
+                                url: 'api/use-health.php',
+                                type: 'POST',
+                                success: function(response){
+                                    let res = JSON.parse(response);
+                                    if(res.status == 'success'){
+                                        alert(res.message);
+                                        // update #health
+                                        document.getElementById("health").innerHTML = res.health;
+                                    }else{
+                                        alert(res.message);
+                                    }
+                                }
+                            });
                         }else{
-                            // if wrong answer and player is going up a ladder
-                            console.log('jawaban anda salah, anda akan tetap di posisi '+this.playerPositions[player.getName()]);
+                            if(finalPos < this.playerPositions[player.getName()]){
+                                // if player is going down a snake
+                                console.log('jawaban anda salah, anda akan turun ke posisi '+finalPos);
+                                this.playerPositions[player.getName()] = finalPos;
+                                player.setPosition(this.playerPositions[player.getName()]);
+                            }else{
+                                // if wrong answer and player is going up a ladder
+                                console.log('jawaban anda salah, anda akan tetap di posisi '+this.playerPositions[player.getName()]);
+                            }
                         }
+                        
                     }
                 }else{
                     this.playerPositions[player.getName()] = finalPos;
@@ -412,13 +438,21 @@ class GameBoard {
         player.updatePosition();
         this.updateTurn();
 
+        var playerTurn = document.getElementById("playerTurn");
+        var text = '';
+        if (this.numberOfPlayers === 1 && this.currentPlayerTurn === 1) {
+            text = "Giliran Komputer";
+        } else {
+            text = `Giliran Player: ${this.playerNames[this.currentPlayerTurn]}`;
+        }
+        playerTurn.innerHTML = text;
 
 
     }
 
 
     showMenu = () => {
-        document.querySelector("#menu").style.display = "block";
+        document.querySelector("#menu").style.display = "flex";
         document.querySelector("#playground").style.display = "none";
         document.querySelector("#superplay").disabled = true;
     }

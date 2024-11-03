@@ -22,13 +22,17 @@ if((@include "include/alert.php") === false){
     const overlay = document.getElementById('sidebarOverlay');
     const menuButton = document.getElementById('menuButton');
 
-    menuButton.addEventListener('click', () => {
-      sidebar.classList.toggle('-translate-x-full');
-      overlay.classList.toggle('hidden');
-    });
+    if(menuButton){
+      menuButton.addEventListener('click', () => {
+        sidebar.classList.toggle('-translate-x-full');
+        overlay.classList.toggle('hidden');
+      });
+    }
+    if(overlay){
+      overlay.addEventListener('click', () => {
+        sidebar.classList.add('-translate-x-full');
+        overlay.classList.add('hidden');
+      });
+    }
 
-    overlay.addEventListener('click', () => {
-      sidebar.classList.add('-translate-x-full');
-      overlay.classList.add('hidden');
-    });
   </script>

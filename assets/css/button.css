@@ -9,7 +9,7 @@
     padding-bottom: 1rem!important;
 }
 
-@media (min-width: 768px){
+/* @media (min-width: 768px){ */
     .btn-primary-sm{
         background: url('../img/button/main.png');
         background-size: 50% 100%!important;
@@ -20,7 +20,7 @@
         padding-top: 8px!important;
         padding-bottom:  8px!important;
     }
-}
+/* } */
 .btn-disabled{
     background: url('../img/button/main-disabled.png');
     background-size: 50% 100%!important;

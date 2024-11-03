@@ -7,10 +7,16 @@
     <title>Snake Ladder</title>
     <link rel="stylesheet" href="assets/css/game/style.css">
     <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <?php
+        include "include/cssHeader.php";
+    ?>
 </head>
 
 <body>
-    <div id="menu">
+    <?php 
+        include "include/topHeader.php";
+    ?>
+    <div id="menu" class='h-screen flex flex-col justify-center items-center'>
         <div class="menu__container">
             <button id="playComputerBtn">1 vs Computer</button>
             <button id="playTwoPlayersBtn">Two Players</button>
@@ -46,6 +52,7 @@
                 <div id="gameController">
                     <div id="dice"></div>
                     <button id="superplay" class='flex flex-col items-center justify-center' disabled>
+                        <span>Mulai</span>
                         <img src="assets/icons/play.svg" alt="Play button">
                     </button>
                 </div>
@@ -54,17 +61,22 @@
                 </div>
             </div>
         </div>
-        <div id="diceContainer">
-          <!-- Dice cube with 6 faces -->
-          <div id="cube">
-              <div class="cubeFace face1">1</div>
-              <div class="cubeFace face2">2</div>
-              <div class="cubeFace face3">3</div>
-              <div class="cubeFace face4">4</div>
-              <div class="cubeFace face5">5</div>
-              <div class="cubeFace face6">6</div>
-          </div>
-      </div>
+        <div class='left-container'>
+            <div id="diceContainer">
+                <!-- Dice cube with 6 faces -->
+                <div id="cube">
+                    <div class="cubeFace face1">1</div>
+                    <div class="cubeFace face2">2</div>
+                    <div class="cubeFace face3">3</div>
+                    <div class="cubeFace face4">4</div>
+                    <div class="cubeFace face5">5</div>
+                    <div class="cubeFace face6">6</div>
+                </div>
+            </div>
+            <div>
+                <p id='playerTurn' class='font-bold text-white text-2xl'></p>
+            </div>
+        </div>
     
         <div class="controller">
             <button class="play" id="red"></button>
