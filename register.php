@@ -12,26 +12,24 @@
     <div class="main">
         <div class="main-window">
             <div class="menu absolute flex flex-col gap-4">
-                <h2 class="text-3xl text-center"><?= $app['app_name'] ?></h2>
-                <form id="myForm">
+                <h2 class="text-sm lg:text-3xl text-center"><?= $app['app_name'] ?></h2>
+                <form id="myForm" class='flex flex-col items-center justify-center'>
                     <div>
-                        <label for="username" class="text-2xl">Username</label>
-                        <input type="text" id="username" class="input p-2 w-full" required placeholder="Username">
+                        <input type="text" id="username" class="input p-1 lg:p-2 w-full" required placeholder="Username">
                     </div>
                     <div class="mt-1">
-                        <label for="parent" class="text-2xl">Nama Orang tua</label>
-                        <input type="text" id="parent" class="input p-2 w-full" required placeholder="Nama Orang Tua">
+                        <input type="text" id="parent" class="input p-1 lg:p-2 w-full" required placeholder="Nama Orang Tua">
                     </div>
                     <div class="mt-1">
-                        <label for="phone" class="text-2xl">No HP</label>
-                        <input type="number" id="phone" class="input p-2 w-full" required placeholder="NO HP">
+                        <input type="number" id="phone" class="input p-1 lg:p-2 w-full" required placeholder="NO HP">
                     </div>
                     <div class="mt-1">
-                        <label for="password" class="text-2xl">Password</label>
-                        <input type="password" id="password" class="input p-2 w-full" required placeholder="Password">
+                        <input type="password" id="password" class="input p-1 lg:p-2 w-full" required placeholder="Password">
                     </div>
-                    <button class="btn btn-primary text-2xl mt-3" type='submit'>Register</button>
-                    <button class="btn btn-primary text-xl" type='button' onclick="openLink('main-menu.php')">Kembali</button>
+                    <div class='mt-2'>
+                        <button class="btn btn-primary text-xl lg:text-2xl" type='submit'>Register</button>
+                        <button class="btn btn-primary text-xl" type='button' onclick="openLink('main-menu.php')">Kembali</button>
+                    </div>
                 </form>
             </div>
         </div>
