@@ -7,7 +7,7 @@
 
 body {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
   background-image: url("./../../img/garden2.jpg");
@@ -56,7 +56,7 @@ button {
   position: relative;
   display: none;
   width: 100%;
-  z-index: 99;
+  z-index: 10;
 }
 
 
@@ -173,6 +173,7 @@ button {
 
 #dice {
   width: 50px;
+  display: none;
   height: 50px;
   background-image: url("./../../img/dice.webp");
   background-position: 380px 110px;
@@ -319,7 +320,13 @@ button {
   left: 50px;
   display: none;
 }
-
+@media (max-width:1024px){
+  #playground {
+      padding: 0px 20px!important;
+      margin-top: -14%;
+      scale: 0.5;
+  }
+}
 
 @media screen and (min-width: 0px) {
   #playground {
@@ -355,4 +362,63 @@ button {
       top: -110px;
   }
 
+}
+
+/* dice style */
+#diceContainer {
+  perspective: 800px;
+  display: flex;
+  position: absolute;
+  right: -50%;
+  top: 20%;
+  flex-direction: column;
+  align-items: center;
+}
+
+#cube {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s ease-in-out;
+}
+
+/* Dice faces */
+.cubeFace {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  color: #fff;
+  background: url(https://c8.alamy.com/comp/2BEPFGN/virus-seamless-background-green-color-coronavirus-covid-19-or-flu-viruses-in-cartoon-flat-vector-texture-for-design-of-web-site-or-placard-2BEPFGN.jpg);
+  background-size: cover;
+  background-position: top;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  font-weight: bold;
+  border: 3px solid #fff;
+  border-radius: 10px;
+}
+
+/* Position each face of the cube */
+.face1 { transform: rotateY(0deg) translateZ(50px); }    /* Face 1 */
+.face2 { transform: rotateX(180deg) translateZ(50px); }  /* Face 2 */
+.face3 { transform: rotateY(90deg) translateZ(50px); }   /* Face 3 */
+.face4 { transform: rotateY(-90deg) translateZ(50px); }  /* Face 4 */
+.face5 { transform: rotateX(90deg) translateZ(50px); }   /* Face 5 */
+.face6 { transform: rotateX(-90deg) translateZ(50px); }  /* Face 6 */
+
+/* Dice roll animation */
+@keyframes rollDice {
+  0% { transform: rotateX(0) rotateY(0); }
+  25% { transform: rotateX(180deg) rotateY(180deg); }
+  50% { transform: rotateX(360deg) rotateY(360deg); }
+  75% { transform: rotateX(540deg) rotateY(540deg); }
+  100% { transform: rotateX(720deg) rotateY(720deg); }
+}
+
+/* Apply the animation to the dice */
+.rolling {
+  animation: rollDice 1s ease-in-out forwards;
 }

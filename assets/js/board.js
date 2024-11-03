@@ -29,6 +29,10 @@ class Board {
         return this.SNAKES_AND_LADDERS;
     }
 
+    getRandQuestions(type = 'amateur') {
+        return questions[type][Math.floor(Math.random() * questions[type].length)];
+    }
+
     setSnakeAndLadders(SNAKES_AND_LADDERS) {
         this.SNAKES_AND_LADDERS = SNAKES_AND_LADDERS;
     }

@@ -14,12 +14,12 @@
             <div class="relative">
                 <h1 class="absolute text-white text-xl lg:text-3xl" style="right: 50%;top:35%"><?= $loginData['health'] ?? 0 ?></h1>
                 <img src="assets/img/button/badge.png" alt="">
-                <img src="assets/img/icon/love.png" alt="" class="love w-[20%] h-auto absolute right-7 top-7">
+                <img src="assets/img/icon/love.png" alt="" class="love w-[20%] h-auto absolute right-[10%] top-[25%] lg:right-[15%] lg:top-[25%]">
             </div>
             <div class="relative">
                 <h1 class="absolute text-white text-xl lg:text-3xl" style="right: 50%;top:35%"><?= $loginData['star'] ?? 0 ?></h1>
                 <img src="assets/img/button/badge.png" alt="">
-                <img src="assets/img/icon/star.png" alt="" class="star w-[20%] h-auto absolute right-6 top-6">
+                <img src="assets/img/icon/star.png" alt="" class="star w-[20%] h-auto absolute right-[10%] top-[25%] lg:right-[15%] lg:top-[25%]">
             </div>
         </div>
         <div class="main-window">

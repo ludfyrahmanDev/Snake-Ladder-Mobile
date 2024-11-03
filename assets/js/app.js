@@ -13,7 +13,7 @@ class GameBoard {
         this.isGameOver = true;
         this.podium = [];
         this.scale = 1;
-
+        this.score = 0;
     }
 
     getBoard = () => {
@@ -65,6 +65,43 @@ class GameBoard {
         // let val = 1;
         return val;
     }
+    rollAnimation = (val) => {
+        const cube = document.getElementById('cube');
+            cube.classList.add('rolling');
+
+            // Remove animation and set a final face after the animation completes
+            setTimeout(() => {
+                cube.classList.remove('rolling');
+
+                // Generate a random number between 1 and 6
+                const randomFace =val;
+                let rotation;
+
+                // Set cube rotation based on random face
+                switch (randomFace) {
+                    case 1:
+                        rotation = 'rotateX(0deg) rotateY(0deg)';        // Face 1
+                        break;
+                    case 2:
+                        rotation = 'rotateX(180deg) rotateY(0deg)';      // Face 2
+                        break;
+                    case 3:
+                        rotation = 'rotateX(0deg) rotateY(-90deg)';      // Face 3
+                        break;
+                    case 4:
+                        rotation = 'rotateX(0deg) rotateY(90deg)';       // Face 4
+                        break;
+                    case 5:
+                        rotation = 'rotateX(270deg) rotateY(0deg)';       // Face 5
+                        break;
+                    case 6:
+                        rotation = 'rotateX(-270deg) rotateY(0deg)';      // Face 6
+                        break;
+                }
+                // Apply final rotation to display result
+                cube.style.transform = rotation;
+            }, 1000);
+    }
 
     setPodium = (newPlayer) => {
         if (!this.podium.includes(newPlayer)) {
@@ -94,6 +131,19 @@ class GameBoard {
         alert("Game is over!");
         alert("Winner is " + this.podium[0]);
         alert("PODIUM: " + this.podium);
+        // ajax to save score
+        var form = new FormData();
+        form.append("score", this.score);
+        $.ajax({
+            url: 'api/save-score.php',
+            type: 'POST',
+            data: form,
+            contentType: false,
+            processData: false,
+            success: function(data){
+                console.log(data);
+            }
+        });
         await new Promise((resolve) => setTimeout(resolve, 1000));
         for (let playerName in this.playerPositions) {
             if (this.playerPositions[playerName] === 100) {
@@ -195,11 +245,11 @@ class GameBoard {
         // Roll the dice
         this.playAudio("assets/audio/roll.mp3");
         let diceRoll = this.rollDice();
+        this.rollAnimation(diceRoll);
         document.getElementById("dice").style.backgroundPositionX = `${this.diceImagePositions[diceRoll - 1]}px`;
 
         await new Promise(resolve => setTimeout(resolve, 500));
         let finalPosition = this.playerPositions[player.getName()] + diceRoll;
-
         if (diceRoll === 6) {
             this.playAudio("assets/audio/bonus.mp3");
             await new Promise(resolve => setTimeout(resolve, 150));
@@ -212,6 +262,12 @@ class GameBoard {
                     player.setPosition(1);
                     player.updatePosition();
                     this.playAudio("assets/audio/move.mp3");
+                    await new Promise(resolve => setTimeout(resolve, 150));
+                }else{
+                    this.playerPositions[player.getName()] = 90;
+                    this.playAudio("assets/audio/move.mp3");
+                    player.setPosition(90);
+                    player.updatePosition();
                     await new Promise(resolve => setTimeout(resolve, 150));
                 }
             } else {
@@ -231,10 +287,39 @@ class GameBoard {
         if (this.playerPositions[player.getName()] < 100) {
             let initialPos = this.playerPositions[player.getName()];
             if (this.playerPositions[player.getName()] in this.board.getSnakeAndLadders()) {
-                this.playerPositions[player.getName()] = this.board.getSnakeAndLadders()[this.playerPositions[player.getName()]];
-                player.setPosition(this.playerPositions[player.getName()]);
+                var question = this.board.getRandQuestions();
+                var finalPos = this.board.getSnakeAndLadders()[this.playerPositions[player.getName()]];
+                if(player.getName() != "computer"){
+                    var answer = prompt(question.question + "\n" + question.answers.join("\n"));
+                    if(answer == question?.correct){
+                        this.score +=1;
+                        if(finalPos > this.playerPositions[player.getName()]){
+                            // if player is going up a ladder
+                            console.log('jawaban anda benar, anda akan naik ke posisi '+finalPos);
+                            this.playerPositions[player.getName()] = finalPos;
+                            player.setPosition(this.playerPositions[player.getName()]);
+                        }else{
+                            console.log('jawaban anda benar, anda akan tetap di posisi '+this.playerPositions[player.getName()]);
+                        }
+    
+                    }else{
+                        if(finalPos < this.playerPositions[player.getName()]){
+                            // if player is going down a snake
+                            console.log('jawaban anda salah, anda akan turun ke posisi '+finalPos);
+                            this.playerPositions[player.getName()] = finalPos;
+                            player.setPosition(this.playerPositions[player.getName()]);
+                        }else{
+                            // if wrong answer and player is going up a ladder
+                            console.log('jawaban anda salah, anda akan tetap di posisi '+this.playerPositions[player.getName()]);
+                        }
+                    }
+                }else{
+                    this.playerPositions[player.getName()] = finalPos;
+                    player.setPosition(this.playerPositions[player.getName()]);
+                }
+                
+                
                 player.updatePosition();
-
                 if (initialPos > this.playerPositions[player.getName()]) {
                     this.playAudio("assets/audio/fall.mp3");
                 } else {
@@ -251,12 +336,15 @@ class GameBoard {
 
                 if (playerName !== player.getName() && player.getPosition() !== 0) {
                     if (this.playerPositions[player.getName()] === this.playerPositions[playerName]) {
-                        this.playerPositions[playerName] = 0;
-                        isCaptured = true;
-                        this.playAudio("assets/audio/fall.mp3");
-                        await new Promise(resolve => setTimeout(resolve, 150));
-                        this.players[playerName].setPosition(0);
-                        this.players[playerName].updatePosition();
+                        if (answer != question?.correct) {
+                            this.playerPositions[playerName] = 0;
+                            isCaptured = true;
+                            this.playAudio("assets/audio/fall.mp3");
+                            await new Promise(resolve => setTimeout(resolve, 150));
+                            this.players[playerName].setPosition(0);
+                            this.players[playerName].updatePosition();
+                        }
+                        
                     }
                 }
             }

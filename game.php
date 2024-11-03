@@ -45,7 +45,7 @@
         
                 <div id="gameController">
                     <div id="dice"></div>
-                    <button id="superplay" disabled>
+                    <button id="superplay" class='flex flex-col items-center justify-center' disabled>
                         <img src="assets/icons/play.svg" alt="Play button">
                     </button>
                 </div>
@@ -54,6 +54,17 @@
                 </div>
             </div>
         </div>
+        <div id="diceContainer">
+          <!-- Dice cube with 6 faces -->
+          <div id="cube">
+              <div class="cubeFace face1">1</div>
+              <div class="cubeFace face2">2</div>
+              <div class="cubeFace face3">3</div>
+              <div class="cubeFace face4">4</div>
+              <div class="cubeFace face5">5</div>
+              <div class="cubeFace face6">6</div>
+          </div>
+      </div>
     
         <div class="controller">
             <button class="play" id="red"></button>
@@ -68,11 +79,15 @@
         </div>
         <div id="log" style="display: none;"></div>
     </div>
-
+    <?php
+    include "include/footer.php";
+    include "include/modalQuestion.php";
+    ?>
     <script src="assets/js/constant.js"></script>
     <script src="assets/js/player.js"></script>
     <script src="assets/js/board.js"></script>
     <script src="assets/js/app.js"></script>
+    
 </body>
 
 </html>
