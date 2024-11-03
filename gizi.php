@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="main ">
-       <div class="text-center">
+       <div class="text-center overflow-y-auto">
         <img src="assets/img/gizi/1.png" class="img-fluid" alt="">
         <img src="assets/img/gizi/2.png" class="img-fluid" alt="">
         <button class="btn btn-primary text-2xl" onclick="openLink('menu.php')">Kembali</button>

@@ -1,12 +1,12 @@
 .btn-primary{
     background: url('../img/button/main.png');
-    background-size: 100% 100%!important;
+    background-size: 50% 100%!important;
     background-repeat: no-repeat !important;
     background-position: center !important;
-    padding-left: 1%!important;
-    padding-right: 1%!important;
-    padding-top: 1%!important;
-    padding-bottom: 1%!important;
+    padding-left: 4rem!important;
+    padding-right: 4rem!important;
+    padding-top: 1rem!important;
+    padding-bottom: 1rem!important;
 }
 
 .btn-primary-sm{
