@@ -8,7 +8,7 @@
         include "include/cssHeader.php";
     ?>
 </head>
-<body>
+<body class='main'>
     <div class="main ">
        <div class="text-center overflow-y-auto">
         <img src="assets/img/gizi/1.png" class="img-fluid" alt="">

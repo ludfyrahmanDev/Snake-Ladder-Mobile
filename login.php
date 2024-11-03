@@ -12,18 +12,18 @@
     <div class="main">
         <div class="main-window">
             <div class="menu absolute flex flex-col gap-4-custom justify-center items-center">
-                <h2 class="text-4xl text-center"><?= $app['app_name'] ?></h2>
-                <form  id='loginForm' class='w-1/3'>
+                <h2 class="lg:text-4xl text-2xl text-center"><?= $app['app_name'] ?></h2>
+                <form  id='loginForm' class='w-full lg:w-1/3'>
                     <div>
-                        <label for="username" class="text-2xl">Username</label>
-                        <input type="text" id="username" class="input p-2 w-full" required placeholder="Username" required>
+                        <label for="username" class="text-xl lg:text-2xl">Username</label>
+                        <input type="text" id="username" class="input p-2 w-2/3" required placeholder="Username" required>
                     </div>
                     <div class="mt-2">
-                        <label for="password" class="text-2xl">Password</label>
-                        <input type="password" id="password" class="input p-2 w-full" required placeholder="Password" required>
+                        <label for="password" class="text-xl lg:text-2xl">Password</label>
+                        <input type="password" id="password" class="input p-2 w-2/3" required placeholder="Password" required>
                     </div>
-                        <button class="btn btn-primary mt-2 text-xl w-full" type='submit'>Log In</button>
-                        <button class="btn btn-primary text-xl w-full" type='button' onclick="openLink('main-menu.php')">Kembali</button>
+                        <button class="btn btn-primary-sm mt-2 text-xl w-full" type='submit'>Log In</button>
+                        <button class="btn btn-primary-sm text-xl w-full" type='button' onclick="openLink('main-menu.php')">Kembali</button>
                 </form>
                
             </div>

@@ -15,7 +15,9 @@
                 <div class=''>
                     <h2 class="text-xl text-center">Sigesit</h2>
                     <div>
-                        <?= $app['tutorial'] ?>
+                        <p class='text-xs lg:text-lg'>
+                        <?= $app['tutorial'] ?>  
+                        </p>
                         <button class="btn btn-primary text-2xl" onclick="openLink('menu.php')">Kembali</button>
                     </div>
                 </div>
